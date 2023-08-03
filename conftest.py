@@ -9,7 +9,7 @@ def chrome_options():
     options = webdriver.ChromeOptions()
 
     """
-    Без этого браузер запускается пустым. Почему - так и не понял(( Решение отсюда:
+    Без следующей строки браузер запускается пустым. Почему - так и не понял(( Решение отсюда:
     https://stackoverflow.com/questions/50642308/webdriverexception-unknown-error-devtoolsactiveport-file-doesnt-exist-while-t/66194969#66194969
     """
     options.add_argument('--remote-debugging-port=9222')
@@ -18,7 +18,7 @@ def chrome_options():
 
 
 @pytest.fixture(scope="module")
-def assemble_chrome(chrome_options):
+def chrome_driver(chrome_options):
     driver = webdriver.Chrome(options=chrome_options)
     driver.set_window_size(800, 600)
-    browser.config.driver = driver
+    return driver
