@@ -17,8 +17,8 @@ def chrome_options():
     return options
 
 
-@pytest.fixture(scope="module")
+@pytest.fixture()
 def chrome_driver(chrome_options):
     driver = webdriver.Chrome(options=chrome_options)
-    driver.set_window_size(800, 600)
+#    driver.set_window_size(800, 600)
     return driver
