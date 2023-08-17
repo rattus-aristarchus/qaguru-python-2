@@ -4,8 +4,7 @@ from selene import be, have
 
 
 @pytest.fixture(scope="function", autouse=True)
-def setup_browser(chrome_driver):
-    browser.config.driver = chrome_driver
+def setup_browser():
     browser.config.window_height = 600
     browser.config.window_height = 1200
 
