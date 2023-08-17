@@ -1,10 +1,12 @@
 import pytest
 from selene.support.shared import browser
 from selene import be, have
+from selenium import webdriver
 
 
 @pytest.fixture(scope="function", autouse=True)
 def setup_browser():
+    browser.config.driver = webdriver.Chrome()
     browser.config.window_height = 600
     browser.config.window_height = 1200
 
